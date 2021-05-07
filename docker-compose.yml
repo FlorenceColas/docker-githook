@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+  # Git hooks
+  githooks-installer:
+    build:
+      context: .
+      dockerfile: './docker/dockerfile.githooks'
+    volumes:
+      - ./.git:/tmp/.git
+      - ./docker/hooks:/tmp/docker/hooks
